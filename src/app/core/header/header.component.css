@@ -1,0 +1,47 @@
+.logo {
+  width: auto;
+}
+
+.nav-top {
+  background-color: #48245A;
+}
+
+.nav-second {
+  background-color: #1ECDC4;
+  height: 40px;
+
+}
+
+
+.navbar-nav>li {
+  border-left: solid 1px rgba(160, 160, 160, .3);
+  line-height: 1
+}
+
+
+
+/*logo*/
+.navbar-default .navbar-header .logo img {
+  max-height: 32px;
+
+}
+
+.search {
+  align: flex-end;
+}
+
+.patient-small-pic {
+  max-height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 5%;
+}
+
+.dropdown-proffile {
+  background-color: #48245A;
+  color: white;
+}
+.btn-left-select {
+  background-color: #1ECDC4;
+  text-align: left;
+}

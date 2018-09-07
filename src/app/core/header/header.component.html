@@ -1,0 +1,70 @@
+<!--Navigation top-->
+<nav class="navbar navbar-light nav-top">
+  <!--<a class="logo " href="index.html"><img class="logo" src="images/logo.png" alt="logo"></a>-->
+  <a class="navbar-brand" routerLink="/">Recipe Book</a>
+
+  <div class="btn-group"
+       appDropdown>
+    <button type="button"
+            class="btn dropdown-proffile dropdown-toggle"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            style="cursor: pointer;"
+            *ngIf="authService.isAuthenticated()">
+      <a class="patient-small-pic">
+        <img class="patient-small-pic"
+             src="http://4.bp.blogspot.com/-LFdgpCT5WN4/UUjm02TEy7I/AAAAAAAAHpo/qPHOq23T-d4/s1600/despicable-me-2-laughing-minions-meumalvadofavorito2filmeanima%C3%A7%C3%A3o2013loucosporfilmes.netblog.jpg"
+             alt="logo">
+      </a>
+      Manage
+    </button>
+
+
+    <div class="dropdown-menu dropdown-menu-right ">
+      <button class="dropdown-item" type="button" (click)="onSaveData()">Save data</button>
+      <button class="dropdown-item" type="button" (click)="onFetchData()">Fetch Data</button>
+    </div>
+  </div>
+
+
+
+</nav>
+
+<!-- End navigation top-->
+
+<!--Secondary navigation-->
+
+<nav class="navbar navbar-expand-lg navbar-light nav-second">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto ">
+      <li>
+        <a class="nav-link" routerLinkActive="actve" routerLink="/recipes" >Recipes <span class="sr-only"></span></a>
+      </li>
+      <li>
+        <a class="nav-link" routerLinkActive="active" routerLink="/shopping-list">Shopping List</a>
+      </li>
+
+
+    </ul>
+    <ul class = "nav navbar-nav navbar-right">
+      <ng-template
+            [ngIf]="!authService.isAuthenticated()">
+
+        <li><a routerLink="/signup">Register</a> </li>
+        <li><a routerLink="/signin">Login</a> </li>
+      </ng-template>
+
+      <li><a
+        style="cursor: pointer;"
+        (click)="onLogout()"
+        *ngIf="authService.isAuthenticated()"
+      >Logout</a></li>
+    </ul>
+  </div>
+</nav>
