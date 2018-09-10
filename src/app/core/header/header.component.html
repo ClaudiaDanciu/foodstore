@@ -11,7 +11,7 @@
             aria-haspopup="true"
             aria-expanded="false"
             style="cursor: pointer;"
-            *ngIf="authService.isAuthenticated()">
+            *ngIf="(authState | async).authenticated">
       <a class="patient-small-pic">
         <img class="patient-small-pic"
              src="http://4.bp.blogspot.com/-LFdgpCT5WN4/UUjm02TEy7I/AAAAAAAAHpo/qPHOq23T-d4/s1600/despicable-me-2-laughing-minions-meumalvadofavorito2filmeanima%C3%A7%C3%A3o2013loucosporfilmes.netblog.jpg"
@@ -54,7 +54,7 @@
     </ul>
     <ul class = "nav navbar-nav navbar-right">
       <ng-template
-            [ngIf]="!authService.isAuthenticated()">
+            [ngIf]="!(authState | async).authenticated">
 
         <li><a routerLink="/signup">Register</a> </li>
         <li><a routerLink="/signin">Login</a> </li>
@@ -63,7 +63,7 @@
       <li><a
         style="cursor: pointer;"
         (click)="onLogout()"
-        *ngIf="authService.isAuthenticated()"
+        *ngIf="(authState | async).authenticated"
       >Logout</a></li>
     </ul>
   </div>
